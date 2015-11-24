@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
         static private double crossProb = 0.0;
         static private double mutateProb = 0.0;
 
-        public static int Generations
+        public static int NumGenerations
         {
             get
             {
@@ -51,6 +51,7 @@ namespace WindowsFormsApplication1
             }
         }
 
+        // Discuss this
         public static void CrossSelect()
         {
             Random n = new Random();
@@ -61,6 +62,7 @@ namespace WindowsFormsApplication1
             }
         }
 
+        // Discuss this
         public static void MutateSelect()
         {
             Random n = new Random();
@@ -71,6 +73,7 @@ namespace WindowsFormsApplication1
             }
         }
 
+        // disucss this
         public static void Run()
         {
             Population p = new Population();
