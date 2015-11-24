@@ -10,8 +10,8 @@ namespace WindowsFormsApplication1
     {
         static private int chromLength = 0;
         static private int numSubChrom = 0;
-        private List<List<int>> Chrome;
-        private List<int> SubChrome;
+        // private List<List<int>> Chrome;    *Move to Population.cs* The list of Chromosomes IS the population
+        public List<int> SubChrome;
 
         public static int Length
         {
@@ -39,23 +39,29 @@ namespace WindowsFormsApplication1
             }
         }
 
+        // We will discuss the constructor
         public Chromosome() //initialize
         {
             Random n = new Random();
-            Chrome = new List<List<int>>();
+            // Chrome = new List<List<int>>(); *Remove* A list of chromosomes is a population
             
-            for (int x = 0; x < Size; x++)
+            for (int i = 0; i < Size; i++)
             {
                 SubChrome = new List<int>();
                 int gene = (int)n.NextDouble();
 
-                for (int y = 0; y < Sub_Chromosome.Length; y++)
+                for (int j = 0; j < Sub_Chromosome.Length; j++)
                 {
                     SubChrome.Add(gene);
                 }
 
                 Chrome.Add(SubChrome);
             }
+        }
+        
+        public double AddOnesFitness()
+        {
+            // calculate fitness by adding all the ones in a chromosome
         }
 
         public static void AckleysFunction()
@@ -78,7 +84,7 @@ namespace WindowsFormsApplication1
             //no idea yet
         }
 
-        public List<List<int>> getChrome()
+        public List<List<int>> GetChrome()
         {
             return Chrome;
         }
