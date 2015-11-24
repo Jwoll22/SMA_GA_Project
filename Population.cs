@@ -9,8 +9,8 @@ namespace WindowsFormsApplication1
     class Population
     {
         static private int popSize = 0;
-        private List<List<List<int>>> CurrentGen;
-        private List<List<List<int>>> NextGen;
+        private List<Chromosome> currentGen;
+        private List<Chromosome> nextGen;
 
         public static int Size
         {
@@ -27,12 +27,12 @@ namespace WindowsFormsApplication1
 
         public Population() //intialize
         {
-            CurrentGen = new List<List<List<int>>>();
+            // CurrentGen = new List<List<List<int>>>();  *update*
 
-            for (int x = 0; x < Size; x++)
+            for (int i = 0; i < Size; i++)
             {
                 Chromosome chr = new Chromosome();
-                CurrentGen.Add(chr.getChrome());
+                CurrentGen.Add(chr);
             }
         }
 
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
 
         public void CreateNextGen()
         {
-            NextGen = new List<List<List<int>>>();
+            // NextGen = new List<List<List<int>>>(); *update*
 
         }
 
